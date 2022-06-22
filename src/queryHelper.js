@@ -15,11 +15,6 @@ export const getUser = async (username: string) => {
         assertErrors(response);
         return response.data.getUser;
     } catch (e) {
-        Analytics.record({
-            name: 'GetUserError',
-            attributes: {
-                error: e.message
-            }
-        })
+        console.log("error", e);
     }
 }
