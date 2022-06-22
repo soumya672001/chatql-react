@@ -15,6 +15,6 @@ export const getUser = async (username: string) => {
         assertErrors(response);
         return response.data.getUser;
     } catch (e) {
-        console.log("error", e);
+        console.log("error in query:", e);
     }
 }
