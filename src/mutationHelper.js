@@ -15,12 +15,7 @@ export const createUser = async (user) => {
         assertErrors(response);
         return response.data.createUser;
     } catch (e) {
-        Analytics.record({
-            name: 'CreateUserError',
-            attributes: {
-                error: e.message
-            }
-        })
+        console.log("error", e);
     }
 }
 
@@ -62,12 +57,7 @@ export const createConvo = async (user1, user2) => {
         );
         assertErrors(userConversation2Response);
     } catch (e) {
-        Analytics.record({
-            name: 'CreateConvoError',
-            attributes: {
-                error: e.message
-            }
-        })
+        console.log("error", e);
     }
 }
 
@@ -79,11 +69,6 @@ export const createMessage = async (message) => {
         assertErrors(response);
         return response.data.createMessage;
     } catch (e) {
-        Analytics.record({
-            name: 'CreateMessageError',
-            attributes: {
-                error: e.message
-            }
-        })
+        console.log("error", e);
     }
 }
