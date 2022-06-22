@@ -5,12 +5,6 @@
 			"providerPlugin": "awscloudformation"
 		}
 	},
-	"analytics": {
-		"chatqlreact": {
-			"service": "Pinpoint",
-			"providerPlugin": "awscloudformation"
-		}
-	},
 	"api": {
 		"chatqlreact": {
 			"service": "AppSync",
