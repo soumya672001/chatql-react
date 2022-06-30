@@ -14,7 +14,7 @@ class AppNav extends Component {
         return (
             <nav className="navbar navbar-primary fixed-top">
                 <a className="navbar-brand text-white" href='/'>
-                    <strong>ChatQL In Sandbox</strong>
+                    <strong>Indusfoods Agent chat</strong>
                 </a>
                 <ul className="nav navbar-nav">
                     {

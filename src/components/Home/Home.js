@@ -5,7 +5,7 @@ import { createUser } from '../../mutationHelper';
 import { getUser } from '../../queryHelper';
 import awsExports from '../../aws-exports';
 import logo from '../../assets/img/chat.png';
-import appsyncLogo from '../../assets/img/AppSync.png';
+import Induslogo from '../../assets/img/IndusFoods.png';
 import './Home.css';
 
 const authErrorMessageMapper = (message) => {
@@ -24,8 +24,8 @@ class Home extends Component {
                 <div className="card bg-light">
                     {/* <img className="card-img-top" src={logo} alt="Exchanging Ideas" /> */}
                     <div className="card-body">
-                        <h1 className="card-title display-4 text-center">ChatQL</h1>
-                        <p className="card-body border border-right-0 border-left-0 text-center p-1"> Bringing together what some people love the most: Conversations and GraphQL </p>
+                        <h1 className="card-title display-4 text-center">Indusfoods Chat</h1>
+                        <p className="card-body border border-right-0 border-left-0 text-center p-1"> Agent interface for whatsapp business chat </p>
                         <Authenticator
                             onStateChange={this.handleAuthStateChange}  
                             amplifyConfig={awsExports}
@@ -34,7 +34,7 @@ class Home extends Component {
                     </div>
                     <div className="bg-light">
                         <a href="https://aws.amazon.com/appsync" target="_blank">
-                            <img className="img-fluid img-responsive mx-auto d-block appsync" src={appsyncLogo} alt="AWS AppSync" />
+                            <img className="img-fluid img-responsive mx-auto d-block appsync" src={Induslogo} alt="Indusfoods" />
                         </a>
                         <br/>
                     </div>
