@@ -5,6 +5,7 @@ import './ChatInput.css';
 
 //const userAccessToken = process.env.REACT_APP_META_TOKEN;
 const secrets = JSON.parse(process.env.secrets);
+console.log(secrets);
 const userAccessToken = secrets["REACT_APP_META_TOKEN"];
 const phoneNumberId = '103105045769273';
 
