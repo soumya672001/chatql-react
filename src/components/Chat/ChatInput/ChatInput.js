@@ -3,8 +3,7 @@ import AuthContext from '../../../AuthContext';
 import { createMessage } from '../../../mutationHelper';
 import './ChatInput.css';
 
-//const userAccessToken = 'EAAE1nIBbZBqEBAFcEiX6BmZACq5yrTjAIVqCSyglpIEFYIXhgYPoa2jv4Yd8GWKv1XgzvP7nDEjnA9tphhJeg748SbcpurvOAeKBJ2m7bBt3oOLUYxlgjq5MKSwRHWAJB60EZAYdDblfQxn1zQfDrsiW911Xj2WNoq3RAUkY9RwaNBjLFatpc6m3R5QvbOLZCKX0IvSxJOL28MKNF1k3';
-const userAccessToken = 'EAAE1nIBbZBqEBAK3axc48Ylewuu2JGYeO7D3evdCefZBuF51BvsfkItOuZCMZBxy3lwHGEfo0AZBAoFlqZBCVFW7mwpBf3v7sSy7wxeHpEHDWF27TEgp12RqZACXwF7cbOTwmZANPWnfQeHe3JkEZBkZASjhIUMGDIYdAr1LakQjCk24To5uNVojZCYGfSSTTm9RTBlAJxVjEJZCwgZDZD';
+const userAccessToken = process.env.REACT_APP_META_TOKEN;
 const phoneNumberId = '103105045769273';
 
 class ChatInput extends Component {
