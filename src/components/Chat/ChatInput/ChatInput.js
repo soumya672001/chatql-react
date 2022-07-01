@@ -3,10 +3,10 @@ import AuthContext from '../../../AuthContext';
 import { createMessage } from '../../../mutationHelper';
 import './ChatInput.css';
 
-//const userAccessToken = process.env.REACT_APP_META_TOKEN;
-const secrets = JSON.parse(process.env.secrets);
+const userAccessToken = process.env.REACT_APP_META_TOKEN;
+/*const secrets = JSON.parse(process.env.secrets);
 console.log(secrets);
-const userAccessToken = secrets["REACT_APP_META_TOKEN"];
+const userAccessToken = secrets["REACT_APP_META_TOKEN"];*/
 const phoneNumberId = '103105045769273';
 
 class ChatInput extends Component {
