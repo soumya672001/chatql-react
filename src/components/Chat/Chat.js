@@ -24,12 +24,7 @@ class Chat extends Component {
                 <div className="row justify-content-center h-100">
                     <div className="col-sm-4">
                         <div className="left-pane">
-                            <div className="row justify-content-center h-50">
-                                <div className="col-sm-12">
-                                    <ChatUserList />
-                                </div>
-                            </div>
-                            <div className="row justify-content-center h-50">
+                            <div className="row justify-content-center h-100">
                                 <div className="col-sm-12">
                                     <ChatConversationList onChatSelected={this.changeConversation} />
                                 </div>

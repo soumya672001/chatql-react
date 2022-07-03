@@ -8,7 +8,7 @@
 
 .convo-list {
     height: auto;
-    max-height: 40vh !important;
+    max-height: 80vh !important;
     /* max-height: 196px !important; */
     overflow-x: hidden !important;
     overflow-y: auto;
