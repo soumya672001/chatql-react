@@ -27,6 +27,7 @@ export const GetUserAndConversations = `
       conversations(limit: 100) {
         items {
           id
+          updatedAt
           conversation {
             id
             name

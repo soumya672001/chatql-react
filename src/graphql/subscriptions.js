@@ -14,6 +14,7 @@ export const OnCreateUserConversation = `
       id
       convoLinkUserId
       convoLinkConversationId
+      updatedAt
       conversation {
         id
         name

@@ -25,8 +25,10 @@ class ChatConversationList extends Component {
                                     userId: username
                                 })}
                                 onSubscriptionMsg={(prev, { onCreateConvoLink }) => {
+                                	console.log(`oncreateconvolink: ${onCreateConvoLink}`)
                                     try {
-                                        prev.getUser.conversations.items.push(onCreateConvoLink);
+                                        prev.getUser.conversations.items = prev.getUser.conversations.items.filter(item => item.id !== onCreateConvoLink.id );
+                                        prev.getUser.conversations.items.unshift(onCreateConvoLink);
                                     } catch (e) {
                                         console.log('Failed to merge user conversation subscription');
                                     }
@@ -49,7 +51,18 @@ class ChatConversationList extends Component {
                                             key={i}
                                             className={this.conversationClassNames()}
                                             onClick={() => this.props.onChatSelected(userConversation.conversation)}>
-                                            {userConversation.conversation.name}
+                                            <div className="card w-75 ">
+                                            <div className="card-body p-1">
+                                            <div className='clearfix'>
+											<p className="card-title mb-1 text-primary">
+												{userConversation.conversation.name}
+											</p>
+											<div className='float-right'>
+												<small className="card-subtitle mb-0 text-muted">{this.convertDate(userConversation.updatedAt)}</small>
+											</div>											
+											</div>
+											</div>
+											</div>
                                         </a>
                                     ));
                                 }}
@@ -64,6 +77,10 @@ class ChatConversationList extends Component {
     conversationClassNames = (id) => {
         return "list-group-item list-group-item-action p-3 border-0"
     }
+    convertDate = (date) => {
+    	var d = new Date(date)
+        return d.toLocaleString();
+    }    
 }
 
 export default ChatConversationList;
