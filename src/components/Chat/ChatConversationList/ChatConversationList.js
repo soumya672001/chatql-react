@@ -5,6 +5,7 @@ import AuthContext from '../../../AuthContext';
 import * as queries from '../../../graphql/queries';
 import * as subscriptions from '../../../graphql/subscriptions';
 import './ChatConversationList.css';
+import ProfilePic from '../../../assets/img/blank-profile.png';
 
 class ChatConversationList extends Component {
     static contextType = AuthContext;
@@ -51,18 +52,31 @@ class ChatConversationList extends Component {
                                             key={i}
                                             className={this.conversationClassNames()}
                                             onClick={() => this.props.onChatSelected(userConversation.conversation)}>
-                                            <div className="card w-75 ">
-                                            <div className="card-body p-1">
-                                            <div className='clearfix'>
-											<p className="card-title mb-1 text-primary">
-												{userConversation.conversation.name}
-											</p>
-											<div className='float-right'>
-												<small className="card-subtitle mb-0 text-muted">{this.convertDate(userConversation.updatedAt)}</small>
-											</div>											
-											</div>
-											</div>
-											</div>
+                                            <div class="col-sm-12 side">
+											<div class="row sideBar">
+											  <div class="col-sm-12 side" >
+											  <div class="row sideBar-body">
+												<div class="col-sm-3 col-xs-3 sideBar-avatar">
+												  <div class="avatar-icon">
+													<img src={ProfilePic}/>
+												  </div>
+												</div>
+												<div class="col-sm-9 col-xs-9 sideBar-main">
+												  <div class="row">
+													<div class="col-sm-8 col-xs-8 sideBar-name">
+													  <span class="name-meta">{userConversation.conversation.name}
+													</span>
+													</div>
+													<div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+													  <span class="time-meta pull-right">{this.convertDate(userConversation.updatedAt)}
+													</span>
+													</div>
+												  </div>
+												</div>
+											  </div> 
+											  </div>                                           
+                                            </div>
+                                            </div>
                                         </a>
                                     ));
                                 }}
