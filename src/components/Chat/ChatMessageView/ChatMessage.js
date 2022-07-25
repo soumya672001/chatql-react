@@ -84,7 +84,7 @@ class ChatMessage extends Component {
 		  console.log(json)
 		  var that = this;
 		if (json.type === "image") {
-		const poolData = {UserPoolId: awsExports.awsmobile.aws_user_pools_id, ClientId: awsExports.awsmobile.aws_user_pools_web_client_id};
+		const poolData = {UserPoolId: awsExports.aws_user_pools_id, ClientId: awsExports.aws_user_pools_web_client_id};
 		const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
 		// React
@@ -101,7 +101,7 @@ class ChatMessage extends Component {
 				AWSService.config.update({
 				  region: "us-east-1",
 				  credentials: new AWSService.CognitoIdentityCredentials({
-					IdentityPoolId: awsExports.awsmobile.aws_cognito_identity_pool_id
+					IdentityPoolId: awsExports.aws_cognito_identity_pool_id
 				  }),
 				});	
 				const s3 = new AWSService.S3({
