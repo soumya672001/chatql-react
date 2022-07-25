@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as AWS from 'aws-sdk';
 import * as AmazonCognitoIdentity from "amazon-cognito-identity-js";
+import awsExports from '../../../aws-exports';
 
 const userAccessToken = process.env.REACT_APP_META_TOKEN;
 
@@ -83,7 +84,7 @@ class ChatMessage extends Component {
 		  console.log(json)
 		  var that = this;
 		if (json.type === "image") {
-		const poolData = {UserPoolId: "us-east-1_H6m0GnAuA", ClientId: "5d6d1h1smuaergts4k18ruu16q"};
+		const poolData = {UserPoolId: awsExports.awsmobile.aws_user_pools_id, ClientId: awsExports.awsmobile.aws_user_pools_web_client_id};
 		const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
 		// React
@@ -100,7 +101,7 @@ class ChatMessage extends Component {
 				AWSService.config.update({
 				  region: "us-east-1",
 				  credentials: new AWSService.CognitoIdentityCredentials({
-					IdentityPoolId: "us-east-1:97ecca8c-d52b-4209-a9ba-664b218b66be"
+					IdentityPoolId: awsExports.awsmobile.aws_cognito_identity_pool_id
 				  }),
 				});	
 				const s3 = new AWSService.S3({
@@ -143,7 +144,7 @@ class ChatMessage extends Component {
 		  }	
 		}  		    
 		} catch (e) {  
-		  this.setState({ ... this.state, text: message})  
+		  this.setState({ ... this.state, text: decodeURIComponent(message)})  
 		}
     }
 }
